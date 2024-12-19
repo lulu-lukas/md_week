@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Registration</title>
+        <style>
+            /* Algemene stijl voor een mobiel scherm */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Variabelen voor eenvoudige aanpassing */
+            :root {
+                --phone-width: 375px;
+                --phone-height: 700px;
+                --phone-border-radius: 30px;
+                --phone-border: 10px;
+                --button-padding: 12px 25px;
+                --button-font-size: 1rem;
+                --header-font-size: 2rem;
+                --text-font-size: 1rem;
+                --button-color: #ff6600;
+                --button-hover-color: #e55a00;
+                --background-color: #e6e6e6;
+                --content-margin-top: 90px; /* Verplaats de inhoud naar beneden */
+                --button-transition: 0.3s ease;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; /* Volledige schermhoogte */
+                background-color: var(--background-color); /* Achtergrondkleur buiten de telefoon */
+                font-family: Arial, sans-serif;
+            }
+
+            /* Telefooncontainer met achtergrondafbeelding */
+            .phone {
+                width: var(--phone-width);
+                height: var(--phone-height);
+                background-image: url('images/img.png'); /* Achtergrondafbeelding voor de telefoon */
+                background-size: cover; /* Zorgt ervoor dat de afbeelding de gehele container bedekt */
+                background-position: center; /* Zet de afbeelding in het midden */
+                border: var(--phone-border) solid #333;
+                border-radius: var(--phone-border-radius);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                text-align: center;
+                transition: box-shadow 0.3s ease; /* Verander de schaduw bij hover */
+            }
+
+            /* Hover effect voor de telefooncontainer */
+            .phone:hover {
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            }
+
+            /* Inhoudssectie */
+            .content {
+                padding: 0px;
+                flex: 1; /* Vul de resterende ruimte */
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start; /* Begin met uitlijnen vanaf de bovenkant */
+                text-align: center;
+                margin-top: var(--content-margin-top); /* Verschuift de inhoud een beetje naar beneden */
+                transition: transform 0.3s ease-in-out; /* Transitie voor inhoud */
+            }
+
+            h1 {
+                font-size: var(--header-font-size);
+                color: var(--button-color);
+                margin-bottom: 100px; /* Verlaag de header om wat ruimte te geven */
+                font-weight: bold;
+                text-transform: uppercase;
+                transition: color 0.3s ease-in-out;
+            }
+
+            h1 span {
+                color: #000;
+            }
+
+            p {
+                font-size: var(--text-font-size);
+                color: #555;
+                margin-bottom: 20px;
+            }
+
+            /* Knopcontainer */
+            .button-container {
+                margin-top: auto; /* Zorgt ervoor dat knoppen onderaan staan */
+                padding: 5px;
+            }
+
+            /* Knopstijl */
+            .btn {
+                display: inline-block;
+                padding: var(--button-padding);
+                background-color: var(--button-color);
+                color: white;
+                font-size: var(--button-font-size);
+                text-transform: uppercase;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: all var(--button-transition); /* Aangepaste overgang voor alle knopelementen */
+                margin-bottom: 15px; /* Ruimte tussen knoppen */
+                width: 80%; /* Beperkt de breedte van de knoppen */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Hover effect voor de knoppen */
+            .btn:hover {
+                background-color: var(--button-hover-color);
+                transform: translateY(-5px); /* Verplaats de knop omhoog bij hover */
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Vergroot de schaduw bij hover */
+            }
+
+            /* Actief effect voor de knop */
+            .btn:active {
+                transform: translateY(0); /* Herstelt de knop naar de originele positie */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Zorg ervoor dat knoppen onder elkaar staan als ze meerdere zijn */
+            .button-container .btn {
+                width: 100%; /* Volledige breedte van de container */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Telefooncontainer -->
+        <div class="phone">
+            <!-- Inhoud -->
+            <div class="content">
+                <h1>Sint<span>lucas</span></h1>
+            </div>
+
+            <!-- Knoppen sectie -->
+            <div class="button-container">
+                <a href="new_page.html" class="btn">Registreer</a>
+                <a href="mailto:support@sintlucas.com" class="btn">Email Ons</a> <!-- E-mailknop -->
+            </div>
+        </div>
+    </body>
+</html>
